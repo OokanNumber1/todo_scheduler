@@ -61,7 +61,6 @@ class _TasksViewState extends ConsumerState<TasksView> {
                 value: 'default',
                 onTap: () => setState(() {
                   pickedFile = null;
-                  //BackgroundService().clear();
                   ref.read(backgroundProvider).clear();
                 }),
                 child: const Text('Set default Background'),

@@ -4,8 +4,10 @@ import 'package:todo_app/src/utilities/notification/notification_service.dart';
 import 'package:timezone/timezone.dart';
 
 class TaskViewModel {
-  TaskViewModel(
-      {required this.databaseProvider, required this.notificationService});
+  TaskViewModel({
+    required this.databaseProvider,
+    required this.notificationService,
+  });
 
   final IDatabaseService databaseProvider;
   final NotificationService? notificationService;

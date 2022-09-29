@@ -32,11 +32,6 @@ class TasksDataContent extends StatelessWidget {
                 onTap: () async {
                   await viewModel.deleteTask(item);
                   ref.refresh(tasksProvider);
-                  //await viewModel.goToTaskView(item);
-                  // Navigator.pushNamed(context, RouteGenerator.routeTaskEdit,arguments: <Object,Object>{
-                  //   TaskViewModel:viewModel,
-                  //   Task:item,
-                  // });
                 },
                 leading: CircleAvatar(
                   radius: 32,
@@ -46,9 +41,7 @@ class TasksDataContent extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontSize: 24,
-                        //color: Colors.grey[300],
                         color: Colors.white
-                        //backgroundColor: Colors.transparent,
                         ),
                   ),
                 ),
@@ -71,7 +64,6 @@ class TasksDataContent extends StatelessWidget {
                   backgroundColor: Colors.white38,
                   child: IconButton(
                     onPressed: () {
-                      print(item.id);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
