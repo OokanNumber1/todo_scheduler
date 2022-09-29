@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TODO-APP',
+      title: 'TODO-Scheduler',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       onGenerateRoute: (settings)=>RouteGenerator().generateRoute(settings),
