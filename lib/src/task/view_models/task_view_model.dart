@@ -10,7 +10,6 @@ class TaskViewModel {
   final IDatabaseService databaseProvider;
   final NotificationService? notificationService;
 
-
   Future<void> addTask(Task task) async {
     await databaseProvider.addTask(task);
     scheduleNotification(
@@ -28,7 +27,11 @@ class TaskViewModel {
   }
 
   Future<void> updateTask(Task task) async => databaseProvider.updateTask(task);
-  Future<void> deleteTask(Task task) async => databaseProvider.deleteTask(task);
+
+  Future<void> deleteTask(Task task) async {
+    databaseProvider.deleteTask(task);
+    notificationService!.cancelNotification(task);
+  }
 
   void scheduleNotification(Task task, TZDateTime date) =>
       notificationService?.scheduleNextNotification(task, date);
